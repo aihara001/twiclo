@@ -1,0 +1,22 @@
+<%= form_with(model: @twiclo, local: true, url: choose_new_or_edit ) do |form| %>
+<% if @twiclo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @twiclo.errors.count %>件のエラーがあります。</h2>
+      <h2>空白、もしくは140文字以上です。再度入力をしてください。</h2>
+      <ul>
+
+      <% @twiclo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="twiclo_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+    <%= form.submit %>
+<% end %>
+
+<%= link_to "つぶやき一覧に戻る", twiclos_path %>

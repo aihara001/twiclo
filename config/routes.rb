@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  get '/twiclos', to: 'twiclos#index'
+
+  resources :twiclos do
+    collection do
+      post :confirm
+    end
+  end
 end

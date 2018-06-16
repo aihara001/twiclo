@@ -1,2 +1,14 @@
-<h1>Twiclos#index</h1>
-<p>Find me in app/views/twiclos/index.html.erb</p>
+<h1>つぶやき一覧</h1>
+<p><%= notice %></p>
+<table>
+<% @twiclos.each do |twiclo| %>
+  <tr>
+    <td><%= twiclo.content %></td>
+    <td><%= link_to "編集", edit_twiclo_path(twiclo.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除', twiclo_path(twiclo.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+<%= link_to '新しくつぶやく', new_twiclo_path %>
