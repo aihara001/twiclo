@@ -1,12 +1,35 @@
-<h3>以下の内容で、投稿する。</h3>
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+ 
+    <header class="header">
+    　　　<nav>
+          <ul class="top_menu clearfix">
+            <li><%= link_to "ホーム", twiclos_path %></li>
+            <li><%= link_to '新規ツイート', new_twiclo_path %></li>
+          </ul>
+        </nav>
+    </header>
+    <article class="content">
+      <h1>以下の内容で、投稿しますか？</h1>
 
 <%= form_with(model: @twiclo, url: twiclos_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <p>内容:<%= @twiclo.content %></p>
+  <p>本文:<%= @twiclo.content %></p>
   <%= form.submit  "投稿する" %>
 <% end %>
-
+    <br>
 <%= form_with(model: @twiclo, url: new_twiclo_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
   <%= form.submit "もどる", name: 'back' %>
 <% end %>
+
+    </article>
+    <br>
+    <footer class="footer1">
+        <p>twitter clone test application</p>
+    </footer>
+
+  </body>
+</html>

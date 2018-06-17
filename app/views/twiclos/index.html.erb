@@ -1,14 +1,35 @@
-<h1>つぶやき一覧</h1>
-<p><%= notice %></p>
-<table>
-<% @twiclos.each do |twiclo| %>
-  <tr>
-    <td><%= twiclo.content %></td>
-    <td><%= link_to "編集", edit_twiclo_path(twiclo.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', twiclo_path(twiclo.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>
-  </tr>
-<% end %>
-</table>
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
 
-<br>
-<%= link_to '新しくつぶやく', new_twiclo_path %>
+    <header class="header">
+    　　　<nav>
+          <ul class="top_menu clearfix">
+            <li><%= link_to "ホーム", twiclos_path %></li>
+            <li><%= link_to '新規ツイート', new_twiclo_path %></li>
+          </ul>
+        </nav>
+      </header>
+    <article>
+      <h1 class="content">ツイート一覧</h1>
+        <h2><%= notice %></h2>
+        <table class="table_menu1">
+          <% @twiclos.each do |twiclo| %>
+            <tr class="table_menu2">
+              <td class="table_menu2"><%= twiclo.content %></td>
+              <td><div class="button1"><%= link_to "編集", edit_twiclo_path(twiclo.id), data: { confirm: '本当に編集していいですか？' } %></div></td>
+              <td><div class="button2"><%= link_to '削除', twiclo_path(twiclo.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></div></td>
+            </tr>
+          <% end %>
+        </table>
+    </article>
+
+    <br>
+
+    <footer class="footer1">
+        <p>twitter clone test application</p>
+    </footer>
+
+  </body>
+</html>
