@@ -1,0 +1,24 @@
+.main-header {
+  padding-bottom: 22%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("top.jpg");
+}
+
+.function {
+  background-color: #e9e9e9;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+
+.function-images {
+  width: 100%;
+  display: table;
+  margin-top: 30px;
+  table-layout: fixed;
+}
+
+.function-image {
+  display: table-cell;
+  width: 50%;
+}

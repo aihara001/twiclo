@@ -23,11 +23,11 @@ class TwiclosController < ApplicationController
   end
 
   def edit
-      @twiclo = Twiclo.find(params[:id])
+
   end
  
   def update
-       @twiclo = Twiclo.find(params[:id])
+
        if @twiclo.update(twiclo_params)
          redirect_to twiclos_path, notice: "編集しました！"
        else

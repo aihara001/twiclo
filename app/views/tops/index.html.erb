@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Achieve</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+ 
+
+  <div class="container">
+    <div class="row">
+      <header></header>
+    <div class="row">
+      <div class="col-xs-1 col-md-12">
+        <section class="main-header">
+      </section></div>
+    <div class="row">
+      <div class="col-xs-1 col-md-6">
+        <h1>Twitter Clone</h1><br>
+          <p>当サイトは人と人をつなぐツール、「ツイート」を提供するサイトです。<br></p>
+          <p>「ツイート」はいつでも誰でも簡単に、リアルタイムで「今」を言葉で表現することができます。<br></p>
+          <p>あなたも是非当サイトを活用し、より多くの人とつながりを体験してみませんか。<br></p>
+      </div>
+      <div class="col-xs-1 col-md-6">
+        <section class="function">
+          <h2>コンテンツ一覧</h2>
+            <div class="function-images">
+              <div class="function-image">
+                <%= image_tag "girls.png" %>
+                  <p><%= link_to "ツイート一覧機能", twiclos_path %></p>
+              </div>
+            <div class="function-image">
+                <%= image_tag "comment.png" %>
+                  <p><%= link_to '新規ツイート投稿機能', new_twiclo_path %></p>
+            </div>
+        </div>
+      </section>
+   </div>
+   <footer></footer>
+  </div>
+  </div>
+</body>
+</html>

@@ -2,33 +2,28 @@
 <html>
   <head></head>
   <body>
- 
-    <header class="header">
-    　　　<nav>
-          <ul class="top_menu clearfix">
-            <li><%= link_to "ホーム", twiclos_path %></li>
-            <li><%= link_to '新規ツイート', new_twiclo_path %></li>
-          </ul>
-        </nav>
-    </header>
+  <div class="container">
+  <div class="row">
+    <header></header>
     <article class="content">
-      <h1 class="content">ツイート投稿内容</h1>
+      <h1>ツイート投稿内容</h1>
       <%= form_with(model: @twiclo, local: true, url: choose_new_or_edit ) do |form| %>
       <% if @twiclo.errors.any? %>
           <h2>※空白、もしくは140文字以上です。再度入力をしてください。</h2>
       <% end %>
-      
+      <div class="row">
       <div class="twiclo_title">
-        <%= form.label :ツイート内容：%>
-        <%= form.text_field :content %>
-      </div>
+      <div class="col-xs-1 col-md-12">
+      <%= form.label :ツイート内容：%>
+      <%= form.text_field :content %>
+      </div></div>
+      <div class="col-xs-1 col-md-12">
       <%= form.submit  "投稿する" %>
-    <% end %>
+    <% end %></div>
+    </div>
     </article>
     <br>
-    <footer class="footer1">
-        <p>twitter clone test application</p>
-    </footer>
-
+　</div>
+  </div>
   </body>
 </html>
