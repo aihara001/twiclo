@@ -1,13 +1,10 @@
 .main-header {
   margin-top: -20px;
-  padding-top: 23%;
   width: 100%;
-  background-size: cover;
-  background-image: url("top.png");
+  top: 0;
 }
-
 .function {
-  background-color: #e9e9e9;
+  background-color: #ffffff;
   padding: 10px;
   padding-bottom: 40px;
 }
