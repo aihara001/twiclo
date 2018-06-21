@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "tops#index"
+  root 'tops#index'
   resources :tops
   resources :twiclos do
     collection do
