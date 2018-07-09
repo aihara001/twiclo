@@ -1,5 +1,6 @@
 class TwiclosController < ApplicationController
     before_action :set_twiclo, only: [:edit, :update, :destroy]
+    before_action :session_twiclo, only: [:edit, :update, :destroy, :create, :new]
     
   def index
       @twiclos = Twiclo.all
@@ -52,6 +53,13 @@ class TwiclosController < ApplicationController
   
   def set_twiclo
     @twiclo = Twiclo.find(params[:id])
+  end
+  
+  def session_twiclo
+    if logged_in?
+    else
+      render new_session_path  
+    end
   end
   
 end
