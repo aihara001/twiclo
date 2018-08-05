@@ -1,3 +1,7 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+<h1 class="content">お気に入りツイート一覧</h1>
+　<% @favorites_twiclos.each do |twiclo| %>
+    <li><%= link_to "#{twiclo.content}", twiclo_path(twiclo.id) %></li>
+  <% end %>

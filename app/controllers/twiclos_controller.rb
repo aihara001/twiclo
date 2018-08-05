@@ -1,11 +1,15 @@
 class TwiclosController < ApplicationController
-    before_action :set_twiclo, only: [:edit, :update, :destroy]
-    before_action :session_twiclo, only: [:edit, :update, :destroy, :create, :new]
+    before_action :set_twiclo, only: [:edit, :update, :destroy, :show]
+    before_action :session_twiclo, only: [:edit, :update, :destroy, :create, :new, :index]
     
   def index
       @twiclos = Twiclo.all
   end
-  
+
+  def show
+      @favorite = current_user.favorites.find_by(twiclo_id: @twiclo.id)
+  end
+
   def new
       if params[:back]
         @twiclo = Twiclo.new(twiclo_params)
@@ -16,10 +20,12 @@ class TwiclosController < ApplicationController
   
   def create
     @twiclo = Twiclo.new(twiclo_params)
+    @twiclo.user_id = current_user.id
+
     if @twiclo.save
       redirect_to twiclos_path, notice: "つぶやきました！"
     else
-      render 'new'
+      render 'new' if @twiclo.invalid?
     end
   end
 
@@ -43,6 +49,7 @@ class TwiclosController < ApplicationController
  
   def confirm
     @twiclo = Twiclo.new(twiclo_params)
+    @twiclo.user_id = current_user.id
     render :new if @twiclo.invalid?
   end
  

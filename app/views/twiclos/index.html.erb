@@ -20,18 +20,24 @@
                   </div>
                   <div class="content2">
                   <button type="button" class="btn btn-default btn-sm">
+                  <%= link_to '詳細', twiclo_path(twiclo.id) %>
+                  </button>
+
+                  <% if twiclo.user_id == current_user.id %>
+                  <button type="button" class="btn btn-default btn-sm">
                     <%= link_to "編集", edit_twiclo_path(twiclo.id), data: { confirm: '本当に編集していいですか？' } %>
                   </button>
                   <button type="button" class="btn btn-default btn-sm">
                     <%= link_to '削除', twiclo_path(twiclo.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
                   </button>
+                  <% end %>
+                  
                   </div>
                 </td>
               </div>
-              
-              
             </tr>
           <% end %>
+
           
         </table>
     </article>
