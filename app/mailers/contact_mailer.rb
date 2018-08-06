@@ -1,7 +1,7 @@
 class ContactMailer < ApplicationMailer
-def contact_mail(contact)
- @contact = contact
-
- mail to: "vshine01@gmail.com", subject: "お問い合わせの確認メール"
+def contact_mail(twiclo)
+ @twiclo = twiclo
+ @user = User.find_by(id: @twiclo.user_id)
+ mail to: "@User.email", subject: "ツイート確認メール"
 end
 end
