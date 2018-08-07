@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>twitter clone</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="twiclos.css">
+
+    <meta name="viewport" content="width=device-width">
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
       /* Email styles need to be inline */
@@ -8,6 +18,10 @@
   </head>
 
   <body>
+    <div class="container">
+    <div class="row">
     <%= yield %>
+  </div>
+  </div>
   </body>
 </html>

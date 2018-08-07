@@ -21,9 +21,9 @@ class TwiclosController < ApplicationController
   def create
     @twiclo = Twiclo.new(twiclo_params)
     @twiclo.user_id = current_user.id
-    ContactMailer.contact_mail(@twiclo).deliver
     if @twiclo.save
       redirect_to twiclos_path, notice: "つぶやきました！"
+      ContactMailer.contact_mail(@twiclo,@twiclo.user.email).deliver
     else
       render 'new' if @twiclo.invalid?
     end
