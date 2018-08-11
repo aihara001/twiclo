@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :twiclos, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_twiclos, through: :favorites, source: :twiclo
+  mount_uploader :image, ImageUploader
 end

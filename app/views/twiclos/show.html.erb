@@ -1,6 +1,7 @@
 <h1>詳細画面</h1>
 
 <h1>ツイート内容: <%= @twiclo.content %></h1>
+<h1>画像: <%= image_tag @twiclo.image %></h1>
 
 <% unless @twiclo.user == current_user.id %>
   <% if @favorite.present? %>

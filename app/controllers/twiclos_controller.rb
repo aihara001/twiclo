@@ -55,7 +55,7 @@ class TwiclosController < ApplicationController
  
   private
   def twiclo_params
-    params.require(:twiclo).permit(:content)
+    params.require(:twiclo).permit(:content, :image, :image_cache)
   end
   
   def set_twiclo

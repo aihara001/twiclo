@@ -11,6 +11,9 @@
 <%= form_with(model: @twiclo, url: twiclos_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p>本文:<%= @twiclo.content %></p>
+  <p>画像:<%= image_tag(@twiclo.image) %></p>
+  <div class="col-xs-12 col-md-12">
+  <%= form.hidden_field :image_cache %></div>
   <button type="submit" class="btn btn-default btn-sm">投稿する</button>
 <% end %>
     <br>
